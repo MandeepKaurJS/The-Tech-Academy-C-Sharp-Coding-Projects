@@ -1,0 +1,30 @@
+﻿@using NewsLetterMVC.Models
+@model List<NewsLetterSignUp>
+<div class="row no-gutters m-3">
+    <div class="card col-sm-12 col-md-10 col-lg-6 mx-autom shadow">
+        <div class="card-header text-center">
+            <h5>Sign-ups</h5>
+        </div>
+        <div class="card-body">
+            @foreach (var signup in Model)
+            {
+                <div class="row">
+                    <div class="col">
+                        @signup.FirstName
+                    </div>
+                    <div class="col">
+                        @signup.LastName
+                    </div>
+                    <div class="col">
+                        @signup.EmailAddress
+                    </div>
+
+                </div>
+
+            }
+
+        </div>
+    </div>
+</div>
+<h2>Admin</h2>
+
