@@ -80,6 +80,48 @@ namespace StudentManagementSystem.Controllers
                 connection.Close();
             }
             return View(student);
+            
+        }
+        public ActionResult Edit(int id)
+        {
+            string queryString = "Select * From Students where id=@id";
+            Students student = new Students();
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Parameters.Add("@id", SqlDbType.Int);
+                command.Parameters["@id"].Value = id;
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    student.id = Convert.ToInt32(reader["id"]);
+                    student.FirstName = reader["FirstName"].ToString();
+                    student.LastName = reader["LastName"].ToString();
+                }
+                connection.Close();
+            }
+            return View(student);
+        }
+        [HttpPost]
+        public ActionResult Edit(Students students)
+        {
+            string queryString = @"Insert into Students(FirstName,LastName)values
+                                (@FirstName,@LastName)";
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Parameters.Add("@id", SqlDbType.Int);
+                command.Parameters.Add("@FirstName", SqlDbType.VarChar);
+                command.Parameters.Add("@FirstName", SqlDbType.VarChar);
+                command.Parameters["@id"].Value = students.id;
+                command.Parameters["@FirstName"].Value = students.FirstName;
+                command.Parameters["@LastName"].Value = students.LastName;
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+            return RedirectToAction("Index");
         }
     }
 }

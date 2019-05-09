@@ -1,0 +1,13 @@
+﻿@model StudentManagementSystem.Models.Students
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+<form submit="/Add" method="post">
+    <input name="id" value="=@Model.id" hidden />
+    <input name="firstname" value="@Model.FirstName"/>
+    <input name="lastname" value="@Model.LastName"/>
+    <button type="submit">Edit Student</button>
+</form>
+
