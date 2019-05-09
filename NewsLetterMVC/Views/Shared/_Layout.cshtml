@@ -4,14 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - NewsLetter Application</title>
-   
+    @Styles.Render("~/Content/css")
 </head>
 <body>
-    
-        @RenderBody()
-       
-    </div>
 
-   
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts",required:false)
+
 </body>
 </html>
