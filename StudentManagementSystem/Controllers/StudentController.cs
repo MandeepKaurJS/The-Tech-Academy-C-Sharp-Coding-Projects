@@ -60,5 +60,26 @@ namespace StudentManagementSystem.Controllers
             }
             return RedirectToAction("Index");
         }
+        public ActionResult Datails(int id)
+        {
+            string queryString = "Select * From Students";
+            Students student = new Students();
+            using (SqlConnection connection=new SqlConnection(_connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Parameters.Add("@id", SqlDbType.Int);
+                command.Parameters["@id"].Value = id;
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    student.id = Convert.ToInt32(reader["id"]);
+                    student.FirstName = reader["FirstName"].ToString();
+                    student.LastName = reader["LastName"].ToString();
+                }
+                connection.Close();
+            }
+            return View(student);
+        }
     }
 }
