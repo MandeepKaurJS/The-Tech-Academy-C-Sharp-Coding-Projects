@@ -1,6 +1,7 @@
 ﻿using StudentManagementSystem.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -40,6 +41,24 @@ namespace StudentManagementSystem.Controllers
         public ActionResult Add()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult Add(Students students)
+        {
+            string queryString=@"Insert into Students(FirstName,LastName)values
+                                (@FirstName,@LastName)";
+            using (SqlConnection connection=new SqlConnection( _connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Parameters.Add("@FirstName", SqlDbType.VarChar);
+                command.Parameters.Add("@FirstName", SqlDbType.VarChar);
+                command.Parameters["@FirstName"].Value = students.FirstName;
+                command.Parameters["@LastName"].Value = students.LastName;
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+            return RedirectToAction("Index");
         }
     }
 }
