@@ -12,11 +12,7 @@ namespace NewsLetterMVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly string _connectionString = @"Data Source=DESKTOP-LDP0GC0\SQLEXPRESS;
-                                            Initial Catalog=NewsLetter;Integrated Security=True;Connect Timeout=30;
-                                            Encrypt=False;TrustServerCertificate=False;
-                                            ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
+       
 
         public ActionResult Index()
         {
