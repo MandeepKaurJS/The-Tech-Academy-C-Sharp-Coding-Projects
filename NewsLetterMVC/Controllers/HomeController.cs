@@ -1,4 +1,5 @@
 ﻿using NewsLetterMVC.Models;
+using NewsLetterMVC.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -22,7 +23,7 @@ namespace NewsLetterMVC.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult SignUp(string firstName,string lastName,string emailAddress)
+        public ActionResult SignUp(string firstName,string lastName,string emailAddress,string socialSecurityNumber)
         {
             if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(emailAddress))
             {
@@ -30,18 +31,19 @@ namespace NewsLetterMVC.Controllers
             }
             else
             {
-                string queryString = @"Insert into SignUps (FirstName,LastName,EmailAddress)values
-                                    (@FirstName,@LastName,@EmailAddress)";
+                string queryString = @"Insert into SignUps (FirstName,LastName,EmailAddress,SocialSecurityNumber)values
+                                    (@FirstName,@LastName,@EmailAddress,@SocialSecurityNumber)";
                 using(SqlConnection connection=new SqlConnection(_connectionString))
                 {
                     SqlCommand command = new SqlCommand(queryString, connection);
                     command.Parameters.Add("@FirstName", SqlDbType.VarChar);
                     command.Parameters.Add("@LastName", SqlDbType.VarChar);
                     command.Parameters.Add("@EmailAddress", SqlDbType.VarChar);
+                    command.Parameters.Add("@SocialSecurityNumber", SqlDbType.VarChar);
                     command.Parameters["@FirstName"].Value = firstName;
                     command.Parameters["@LastName"].Value = lastName;
                     command.Parameters["@EmailAddress"].Value = emailAddress;
-
+                    command.Parameters["@SocialSecurityNumber"].Value =socialSecurityNumber ;
                     connection.Open();
                     command.ExecuteNonQuery();
                     connection.Close();
@@ -62,14 +64,23 @@ namespace NewsLetterMVC.Controllers
                 while (reader.Read())
                 {
                     var signup = new NewsLetterSignUp();
-                    signup.id = Convert.ToInt32(reader["Id"]);
+                    signup.Id = Convert.ToInt32(reader["Id"]);
                     signup.FirstName = reader["FirstName"].ToString();
                     signup.LastName = reader["LastName"].ToString();
                     signup.EmailAddress = reader["EmailAddress"].ToString();
+                    signup.SocialSecurityNumber = reader["SocialSecurityNumber"].ToString();
                     signups.Add(signup);
                 }
             }
-            return View(signups);
+            var signupvm = new List<SignUpVm>();
+            foreach(var signup in signups)
+            {
+                var signupVm = new SignUpVm();
+                signupVm.FirstName = signup.FirstName;
+                signupVm.LastName = signup.LastName;
+                signupVm.EmailAddress = signup.EmailAddress;
+            }
+            return View(signupvm);
         }
     }
 }
