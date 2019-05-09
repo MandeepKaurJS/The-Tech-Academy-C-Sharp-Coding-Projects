@@ -1,8 +1,5 @@
 ﻿using NewsLetterMVC.ViewModels;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace NewsLetterMVC.Controllers
@@ -12,7 +9,7 @@ namespace NewsLetterMVC.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            using (NewsLetterEntities db = new NewsLetterEntities())
+            using (NewsLetterEntities1 db = new NewsLetterEntities1())
             {
                 var signups = db.SignUps;
                 var signupvm = new List<SignUpVm>();

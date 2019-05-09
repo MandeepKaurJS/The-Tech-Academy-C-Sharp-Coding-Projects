@@ -19,6 +19,5 @@ namespace NewsLetterMVC
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
         public Nullable<System.DateTime> Removed { get; set; }
-       
     }
 }

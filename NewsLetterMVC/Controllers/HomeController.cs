@@ -19,7 +19,7 @@ namespace NewsLetterMVC.Controllers
             }
             else
             {
-                using(NewsLetterEntities db=new NewsLetterEntities())
+                using(NewsLetterEntities1 db=new NewsLetterEntities1())
                 {
                     var signup = new SignUp();
                     signup.FirstName = firstName;

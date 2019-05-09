@@ -10,7 +10,7 @@
     <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Removed" Type="DateTime" Precision="3" />
   </EntityType>
-  <EntityContainer Name="NewsLetterEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="NewsLetterEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="SignUps" EntityType="Self.SignUp" />
   </EntityContainer>
 </Schema>
