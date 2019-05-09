@@ -1,4 +1,5 @@
-﻿using NewsLetterMVC.ViewModels;
+﻿using NewsLetterMVC.Models;
+using NewsLetterMVC.ViewModels;
 using System.Collections.Generic;
 using System.Web.Mvc;
 

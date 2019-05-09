@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using NewsLetterMVC.Models;
+using System.Web.Mvc;
 
 namespace NewsLetterMVC.Controllers
 {
