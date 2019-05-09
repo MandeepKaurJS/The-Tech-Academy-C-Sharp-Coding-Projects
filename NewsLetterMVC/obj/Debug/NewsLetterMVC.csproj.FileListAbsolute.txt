@@ -74,3 +74,7 @@ C:\Users\VrinMan Dulay\Documents\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects
 C:\Users\VrinMan Dulay\Documents\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects\NewsLetterMVC\obj\Debug\NewsLetterMVC.csproj.CopyComplete
 C:\Users\VrinMan Dulay\Documents\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects\NewsLetterMVC\obj\Debug\NewsLetterMVC.dll
 C:\Users\VrinMan Dulay\Documents\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects\NewsLetterMVC\obj\Debug\NewsLetterMVC.pdb
+C:\Users\VrinMan Dulay\Documents\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects\NewsLetterMVC\bin\EntityFramework.dll
+C:\Users\VrinMan Dulay\Documents\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects\NewsLetterMVC\bin\EntityFramework.SqlServer.dll
+C:\Users\VrinMan Dulay\Documents\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects\NewsLetterMVC\bin\EntityFramework.xml
+C:\Users\VrinMan Dulay\Documents\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects\NewsLetterMVC\bin\EntityFramework.SqlServer.xml
