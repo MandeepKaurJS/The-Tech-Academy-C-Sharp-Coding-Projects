@@ -18,9 +18,29 @@ namespace CarInsurancePassTest.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult SignUp(string firstName, string lastName, string emailAddress)
+        //public ActionResult SignUp(CarInsuranceTable table)
+        //{
+        //    if (string.IsNullOrEmpty(table.FirstName) || string.IsNullOrEmpty(table.LastName) || string.IsNullOrEmpty(table.EmailAddress) || table.Date_of_birth == null || table.CarYear == null || string.IsNullOrEmpty(table.CarMake))
+        //    {
+        //        return View("~/Views/Shared/Error.cshtml");
+        //    }
+        //    else
+        //    {
+        //        using (CarInsuranceEntities db = new CarInsuranceEntities())
+        //        {
+        //            var signup = new CarInsuranceTable();
+        //            db.CarInsuranceTables.Add(signup);
+        //            db.SaveChanges();
+
+        //        }
+
+        //        return View("Success");
+        //    }
+        //}
+
+        public ActionResult SignUp(string firstName, string lastName, string emailAddress,DateTime dateofbirth,DateTime carYear,long carmodel,string carmake)
         {
-            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(emailAddress))
+            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(emailAddress)||dateofbirth==null ||carYear==null||carmodel==null||string.IsNullOrEmpty(carmake))
             {
                 return View("~/Views/Shared/Error.cshtml");
             }
@@ -32,7 +52,10 @@ namespace CarInsurancePassTest.Controllers
                     signup.FirstName = firstName;
                     signup.LastName = lastName;
                     signup.EmailAddress = emailAddress;
-
+                    signup.Date_of_birth = dateofbirth;
+                    signup.CarYear = carYear;
+                    signup.CarModel = carmodel;
+                    signup.CarMake = carmake;
                     db.CarInsuranceTables.Add(signup);
                     db.SaveChanges();
                 }
