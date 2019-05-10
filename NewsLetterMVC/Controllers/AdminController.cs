@@ -10,6 +10,7 @@ namespace NewsLetterMVC.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
+       
         public ActionResult Index()
         {
             using (NewsLetterEntities1 db = new NewsLetterEntities1())

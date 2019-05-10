@@ -1,0 +1,74 @@
+﻿
+<h2>@ViewBag.Title.</h2>
+<h3></h3>
+<h2>SignUp</h2>
+
+<div class="row no-gutters m-3">
+    <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto shadow">
+        <div class="card-header text-center">
+            <h5 class="m-0">Sign Up Here</h5>
+        </div>
+        <div class="card-body">
+            @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
+            {
+                <div class="row no-gutters">
+                    <div class="form-group col-md-12">
+                        <input name="FirstName" type="text" class="form-control" placeholder="First Name" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <input name="LastName" type="text" class="form-control" placeholder="Last name" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <input name="EmailAddress" type="email" class="form-control" placeholder="Email" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label>Date of Birth: </label>
+                        <input type="date" id="start" name="trip-start" min="1900-01-01" max="2019-12-31" placeholder="Date of Birth">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label>Car Year:  </label>
+                        <input type="number" min="1900" max="2099" step="1" value="2016" />
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label>Car Model:  </label>
+                        <input type="number" min="1900" max="2099" step="1" value="2016" />
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label>Car Make:  </label>
+                        <input type="text" placeholder="Car Make" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label>If you have ever had a DUI.</label>
+                    </div>
+                    <div class="form-group col-md-12">
+
+                        <select>
+                            <option value="">Select your option: </option>
+                            <option value="Yes" style="width:auto;height:auto;">Yes</option>
+                            <option value="Yes">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label>How many speeding tickets you have.</label>
+                    </div>
+                    <div class="form-group col-md-12">
+
+                        <select>
+                            <option value="">Select your option: </option>
+                            <option value="Yes">1</option>
+                            <option value="Yes">2</option>
+                            <option value="Yes">3</option>
+                            <option value="Yes">More</option>
+                        </select>
+                    </div>
+
+
+                </div>
+
+                <button type="submit" class="btn btn-block btn-primary">Submit</button>
+            }
+        </div>
+    </div>
+</div>
+
+
