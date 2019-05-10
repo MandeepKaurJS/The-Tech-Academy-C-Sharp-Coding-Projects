@@ -20,7 +20,8 @@ namespace CarInsuranceApp.Models
         public string EmailAddress { get; set; }
         public Nullable<System.DateTime> Date_of_birth { get; set; }
         public Nullable<System.DateTime> CarYear { get; set; }
-        public Nullable<System.DateTime> CarModel { get; set; }
-        public Nullable<System.DateTime> CarMake { get; set; }
+        public long CarModel { get; set; }
+        public string CarMake { get; set; }
+
     }
 }

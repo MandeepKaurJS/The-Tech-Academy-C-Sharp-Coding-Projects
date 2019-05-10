@@ -10,8 +10,8 @@
     <Property Name="EmailAddress" Type="varchar" MaxLength="100" />
     <Property Name="Date_of_birth" Type="date" />
     <Property Name="CarYear" Type="date" />
-    <Property Name="CarModel" Type="datetime" />
-    <Property Name="CarMake" Type="datetime" />
+    <Property Name="CarModel" Type="bigint" />
+    <Property Name="CarMake" Type="varchar" MaxLength="200" />
   </EntityType>
   <EntityContainer Name="CarInsuranceModelStoreContainer">
     <EntitySet Name="CarInsuranceTable" EntityType="Self.CarInsuranceTable" Schema="dbo" store:Type="Tables" />
