@@ -19,6 +19,7 @@ namespace CarInsurancePassTest.Models
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
         public Nullable<System.DateTime> Date_of_birth { get; set; }
+
         public Nullable<System.DateTime> CarYear { get; set; }
         public string CarModel { get; set; }
         public string CarMake { get; set; }
