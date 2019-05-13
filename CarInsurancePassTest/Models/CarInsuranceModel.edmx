@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CarInsuranceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CarInsuranceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CarInsuranceTable">
           <Key>
             <PropertyRef Name="Id" />
@@ -15,14 +15,13 @@
           <Property Name="EmailAddress" Type="varchar" MaxLength="100" />
           <Property Name="Date_of_birth" Type="date" />
           <Property Name="CarYear" Type="date" />
-          <Property Name="CarModel" Type="bigint" />
           <Property Name="CarMake" Type="varchar" MaxLength="200" />
+          <Property Name="CarModel" Type="varchar" MaxLength="60" />
         </EntityType>
         <EntityContainer Name="CarInsuranceModelStoreContainer">
           <EntitySet Name="CarInsuranceTable" EntityType="Self.CarInsuranceTable" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CarInsuranceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -36,8 +35,8 @@
           <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Date_of_birth" Type="DateTime" Precision="0" />
           <Property Name="CarYear" Type="DateTime" Precision="0" />
-          <Property Name="CarModel" Type="Int64" />
           <Property Name="CarMake" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CarModel" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="CarInsuranceEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CarInsuranceTables" EntityType="Self.CarInsuranceTable" />
@@ -51,13 +50,13 @@
           <EntitySetMapping Name="CarInsuranceTables">
             <EntityTypeMapping TypeName="CarInsuranceModel.CarInsuranceTable">
               <MappingFragment StoreEntitySet="CarInsuranceTable">
+                <ScalarProperty Name="CarModel" ColumnName="CarModel" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
                 <ScalarProperty Name="Date_of_birth" ColumnName="Date_of_birth" />
                 <ScalarProperty Name="CarYear" ColumnName="CarYear" />
-                <ScalarProperty Name="CarModel" ColumnName="CarModel" />
                 <ScalarProperty Name="CarMake" ColumnName="CarMake" />
               </MappingFragment>
             </EntityTypeMapping>

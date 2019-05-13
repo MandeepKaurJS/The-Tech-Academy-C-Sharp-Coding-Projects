@@ -38,9 +38,9 @@ namespace CarInsurancePassTest.Controllers
         //    }
         //}
 
-        public ActionResult SignUp(string firstName, string lastName, string emailAddress,DateTime dateofbirth,DateTime carYear,long carmodel,string carmake)
+        public ActionResult SignUp(string firstName, string lastName, string emailAddress,DateTime dateofbirth,DateTime carYear,string carmodel,string carmake)
         {
-            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(emailAddress)||dateofbirth==null ||carYear==null||carmodel==null||string.IsNullOrEmpty(carmake))
+            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(emailAddress)||string.IsNullOrEmpty(carmodel)||string.IsNullOrEmpty(carmake))
             {
                 return View("~/Views/Shared/Error.cshtml");
             }
@@ -48,7 +48,8 @@ namespace CarInsurancePassTest.Controllers
             {
                 using (CarInsuranceEntities db = new CarInsuranceEntities())
                 {
-                    var signup = new CarInsuranceTable();
+                    CarInsuranceTable carInsurance = new CarInsuranceTable();
+                    var signup = new SignUp();
                     signup.FirstName = firstName;
                     signup.LastName = lastName;
                     signup.EmailAddress = emailAddress;
@@ -56,7 +57,7 @@ namespace CarInsurancePassTest.Controllers
                     signup.CarYear = carYear;
                     signup.CarModel = carmodel;
                     signup.CarMake = carmake;
-                    db.CarInsuranceTables.Add(signup);
+                    db.CarInsuranceTables.Add(carInsurance);
                     db.SaveChanges();
                 }
 

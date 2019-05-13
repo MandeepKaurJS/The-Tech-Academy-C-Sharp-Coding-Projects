@@ -23,29 +23,29 @@
                     </div>
                     <div class="form-group col-md-12">
                         <label>Date of Birth: </label>
-                        <input type="date" id="start" name="trip-start" min="1900-01-01" max="2019-12-31" placeholder="Date of Birth">
+                        <input type="date" name="bday" class="form-control">
                     </div>
                     <div class="col-md-12 form-group">
                         <label>Car Year:  </label>
-                        <input type="number" min="1900" max="2099" step="1" value="2016" />
+                        <input type="number" min="1900" max="2099" step="1"placeholder="Car Year" class="form-control" />
                     </div>
                     <div class="col-md-12 form-group">
                         <label>Car Model:  </label>
-                        <input type="number" min="1900" max="2099" step="1" value="2016" />
+                        <input type="text" name="CarModel" class="form-control" placeholder="Car Model" />
                     </div>
                     <div class="col-md-12 form-group">
                         <label>Car Make:  </label>
-                        <input type="text" placeholder="Car Make" />
+                        <input type="text" placeholder="Car Make" class="form-control"/>
                     </div>
                     <div class="form-group col-md-12">
                         <label>If you have ever had a DUI.</label>
                     </div>
                     <div class="form-group col-md-12">
 
-                        <select>
+                        <select class="form-control">
                             <option value="">Select your option: </option>
                             <option value="Yes" style="width:auto;height:auto;">Yes</option>
-                            <option value="Yes">No</option>
+                            <option value="No">No</option>
                         </select>
                     </div>
                     <div class="form-group col-md-12">
@@ -53,19 +53,20 @@
                     </div>
                     <div class="form-group col-md-12">
 
-                        <select>
+                        <select class="form-control">
                             <option value="">Select your option: </option>
-                            <option value="Yes">1</option>
-                            <option value="Yes">2</option>
-                            <option value="Yes">3</option>
-                            <option value="Yes">More</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="More">More</option>
                         </select>
                     </div>
 
 
                 </div>
 
-                <button type="submit" class="btn btn-block btn-primary">Submit</button>
+                <button type="submit" class="btn btn-block btn-primary form-control">Submit</button>
             }
         </div>
     </div>
