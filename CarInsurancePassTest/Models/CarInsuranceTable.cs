@@ -23,5 +23,8 @@ namespace CarInsurancePassTest.Models
         public Nullable<System.DateTime> CarYear { get; set; }
         public string CarModel { get; set; }
         public string CarMake { get; set; }
+        public string DUI { get; set; }
+        public string Tickets { get; set; }
+        public string FullCoverage { get; set; }
     }
 }

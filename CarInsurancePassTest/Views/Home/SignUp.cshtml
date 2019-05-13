@@ -11,61 +11,69 @@
             <div class="card-body">
                 @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
                 {
-                    <div class="row no-gutters">
-                        <div class="form-group col-md-12">
-                            <input name="FirstName" type="text" class="form-control" placeholder="First Name" />
-                        </div>
-                        <div class="form-group col-md-12">
-                            <input name="LastName" type="text" class="form-control" placeholder="Last name" />
-                        </div>
-                        <div class="form-group col-md-12">
-                            <input name="EmailAddress" type="email" class="form-control" placeholder="Email" />
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label>Date of Birth: </label>
-                           =
-                            <input type="date" name="bday" class="form-control">
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <label>Car Year:  </label>
-                            <input type="number" min="1900" max="2099" step="1" placeholder="Car Year" class="form-control" />
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <label>Car Model:  </label>
-                            <input type="text" name="CarModel" class="form-control" placeholder="Car Model" />
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <label>Car Make:  </label>
-                            <input type="text" placeholder="Car Make" class="form-control" />
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label>If you have ever had a DUI.</label>
-                        </div>
-                        <div class="form-group col-md-12">
-
-                            <select class="form-control">
-                                <option value="">Select your option: </option>
-                                <option value="Yes" style="width:auto;height:auto;">Yes</option>
-                                <option value="No">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label>How many speeding tickets you have.</label>
-                        </div>
-                        <div class="form-group col-md-12">
-
-                            <select class="form-control">
-                                <option value="">Select your option: </option>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="More">More</option>
-                            </select>
-                        </div>
-
-
+                <div class="row no-gutters">
+                    <div class="form-group col-md-12">
+                        <input name="FirstName" type="text" class="form-control" placeholder="First Name" />
                     </div>
+                    <div class="form-group col-md-12">
+                        <input name="LastName" type="text" class="form-control" placeholder="Last name" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <input name="EmailAddress" type="email" class="form-control" placeholder="Email" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label>Date of Birth: </label>
+
+                        <input type="date" name="bday" class="form-control">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label>Car Year:  </label>
+                        <input type="number" min="1900" max="2099" step="1" placeholder="Car Year" class="form-control" />
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label>Car Model:  </label>
+                        <input type="text" name="CarModel" class="form-control" placeholder="Car Model" />
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label>Car Make:  </label>
+                        <input type="text" placeholder="Car Make" class="form-control" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label>If you have ever had a DUI.</label>
+                    </div>
+                    <div class="form-group col-md-12">
+
+                        <select class="form-control">
+                            <option value="">Select your option: </option>
+                            <option value="Yes" style="width:auto;height:auto;">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label>How many speeding tickets you have.</label>
+                    </div>
+                    <div class="form-group col-md-12">
+
+                        <select class="form-control">
+                            <option value="">Select your option: </option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="More">More</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label>Would you like full coverage or liability?</label>
+                    </div>
+                    <div class= "form-group col-md-12">
+                        <select class="form-control">
+                            <option value="">Select your option: </option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                </div>
 
                     <button type="submit" class="btn btn-block btn-primary form-control">Submit</button>
                 }

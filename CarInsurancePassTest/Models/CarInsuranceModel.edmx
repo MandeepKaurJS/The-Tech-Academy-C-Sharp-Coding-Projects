@@ -17,6 +17,9 @@
           <Property Name="CarYear" Type="date" />
           <Property Name="CarMake" Type="varchar" MaxLength="200" />
           <Property Name="CarModel" Type="varchar" MaxLength="60" />
+          <Property Name="DUI" Type="text" />
+          <Property Name="Tickets" Type="varchar" MaxLength="10" />
+          <Property Name="FullCoverage" Type="text" />
         </EntityType>
         <EntityContainer Name="CarInsuranceModelStoreContainer">
           <EntitySet Name="CarInsuranceTable" EntityType="Self.CarInsuranceTable" Schema="dbo" store:Type="Tables" />
@@ -37,6 +40,9 @@
           <Property Name="CarYear" Type="DateTime" Precision="0" />
           <Property Name="CarMake" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="CarModel" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="DUI" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Tickets" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FullCoverage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="CarInsuranceEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CarInsuranceTables" EntityType="Self.CarInsuranceTable" />
@@ -50,6 +56,9 @@
           <EntitySetMapping Name="CarInsuranceTables">
             <EntityTypeMapping TypeName="CarInsuranceModel.CarInsuranceTable">
               <MappingFragment StoreEntitySet="CarInsuranceTable">
+                <ScalarProperty Name="FullCoverage" ColumnName="FullCoverage" />
+                <ScalarProperty Name="Tickets" ColumnName="Tickets" />
+                <ScalarProperty Name="DUI" ColumnName="DUI" />
                 <ScalarProperty Name="CarModel" ColumnName="CarModel" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />

@@ -12,6 +12,9 @@
     <Property Name="CarYear" Type="date" />
     <Property Name="CarMake" Type="varchar" MaxLength="200" />
     <Property Name="CarModel" Type="varchar" MaxLength="60" />
+    <Property Name="DUI" Type="text" />
+    <Property Name="Tickets" Type="varchar" MaxLength="10" />
+    <Property Name="FullCoverage" Type="text" />
   </EntityType>
   <EntityContainer Name="CarInsuranceModelStoreContainer">
     <EntitySet Name="CarInsuranceTable" EntityType="Self.CarInsuranceTable" Schema="dbo" store:Type="Tables" />

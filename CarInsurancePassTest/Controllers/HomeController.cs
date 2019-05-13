@@ -18,52 +18,52 @@ namespace CarInsurancePassTest.Controllers
             return View();
         }
         [HttpPost]
-        //public ActionResult SignUp(CarInsuranceTable table)
-        //{
-        //    if (string.IsNullOrEmpty(table.FirstName) || string.IsNullOrEmpty(table.LastName) || string.IsNullOrEmpty(table.EmailAddress) || table.Date_of_birth == null || table.CarYear == null || string.IsNullOrEmpty(table.CarMake))
-        //    {
-        //        return View("~/Views/Shared/Error.cshtml");
-        //    }
-        //    else
-        //    {
-        //        using (CarInsuranceEntities db = new CarInsuranceEntities())
-        //        {
-        //            var signup = new CarInsuranceTable();
-        //            db.CarInsuranceTables.Add(signup);
-        //            db.SaveChanges();
-
-        //        }
-
-        //        return View("Success");
-        //    }
-        //}
-
-        public ActionResult SignUp(string firstName, string lastName, string emailAddress, DateTime dateofbirth, DateTime carYear, string carmodel, string carmake)
+        public ActionResult SignUp(CarInsuranceTable table)
         {
-            //if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(emailAddress) || string.IsNullOrEmpty(carmodel) || string.IsNullOrEmpty(carmake))
-            //{
-            //    return View("~/Views/Shared/Error.cshtml");
-            //}
-            //else
-            //{
+            if (string.IsNullOrEmpty(table.FirstName) || string.IsNullOrEmpty(table.LastName) || string.IsNullOrEmpty(table.EmailAddress))
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
+            else
+            {
                 using (CarInsuranceEntities db = new CarInsuranceEntities())
                 {
-                    CarInsuranceTable carInsurance = new CarInsuranceTable();
-                    var signup = new SignUp();
-                    signup.FirstName = firstName;
-                    signup.LastName = lastName;
-                    signup.EmailAddress = emailAddress;
-                    signup.Date_of_birth = dateofbirth;
-                    signup.CarYear = carYear;
-                    signup.CarModel = carmodel;
-                    signup.CarMake = carmake;
-                    db.CarInsuranceTables.Add(carInsurance);
+                    //var signup = new CarInsuranceTable();
+                    db.CarInsuranceTables.Add(table);
                     db.SaveChanges();
+
                 }
 
                 return View("Success");
-           // }
+            }
         }
+
+        //public ActionResult SignUp(string firstName, string lastName, string emailAddress, DateTime dateofbirth, DateTime carYear, string carmodel, string carmake)
+        //{
+        //if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(emailAddress) || string.IsNullOrEmpty(carmodel) || string.IsNullOrEmpty(carmake))
+        //{
+        //    return View("~/Views/Shared/Error.cshtml");
+        //}
+        //else
+        //{
+        //        using (CarInsuranceEntities db = new CarInsuranceEntities())
+        //        {
+        //            CarInsuranceTable carInsurance = new CarInsuranceTable();
+        //            var signup = new SignUp();
+        //            signup.FirstName = firstName;
+        //            signup.LastName = lastName;
+        //            signup.EmailAddress = emailAddress;
+        //            signup.Date_of_birth = dateofbirth;
+        //            signup.CarYear = carYear;
+        //            signup.CarModel = carmodel;
+        //            signup.CarMake = carmake;
+        //            db.CarInsuranceTables.Add(carInsurance);
+        //            db.SaveChanges();
+        //        }
+
+        //        return View("Success");
+        //   // }
+        //}
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
