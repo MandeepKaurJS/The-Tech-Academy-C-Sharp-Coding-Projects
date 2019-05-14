@@ -1,5 +1,7 @@
-﻿using System;
+﻿using FirstCodeApp.Context;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,7 +18,7 @@ namespace FirstCodeApp
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            Database.SetInitializer(new DatabaseInitializer()); undleConfig.RegisterBundles(BundleTable.Bundles);
+            Database.SetInitializer(new DataBaseInitilizer()); 
         }
     }
 }
