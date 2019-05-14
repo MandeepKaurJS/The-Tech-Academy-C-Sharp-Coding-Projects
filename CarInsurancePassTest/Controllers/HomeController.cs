@@ -18,54 +18,57 @@ namespace CarInsurancePassTest.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult SignUp(CarInsuranceTable table)
-        {
-            if (string.IsNullOrEmpty(table.FirstName) || string.IsNullOrEmpty(table.LastName) || string.IsNullOrEmpty(table.EmailAddress))
-            {
-                return View("~/Views/Shared/Error.cshtml");
-            }
-            else
-            {
-                using (CarInsuranceEntities db = new CarInsuranceEntities())
-                {
-                    //var signup = new CarInsuranceTable();
-                    db.CarInsuranceTables.Add(table);
-                    db.SaveChanges();
-
-                }
-
-                return View("Success");
-            }
-        }
-
-        //public ActionResult SignUp(string firstName, string lastName, string emailAddress, DateTime dateofbirth, DateTime carYear, string carmodel, string carmake)
+        //public ActionResult SignUp(CarInsuranceTable table)
         //{
+        //    if (string.IsNullOrEmpty(table.FirstName) || string.IsNullOrEmpty(table.LastName) || string.IsNullOrEmpty(table.EmailAddress))
+        //    {
+        //        return View("~/Views/Shared/Error.cshtml");
+        //    }
+        //    else
+        //    {
+        //        using (CarInsuranceEntities db = new CarInsuranceEntities())
+        //        {
+        //            //var signup = new CarInsuranceTable();
+        //            db.CarInsuranceTables.Add(table);
+        //            db.SaveChanges();
+
+        //        }
+
+        //        return View("Success");
+        //    }
+   // }
+
+    public ActionResult SignUp(string firstName, string lastName, string emailAddress, DateTime dateofbirth, DateTime carYear, string carmodel, string carmake, string DUI,string fullCoverage,string tickets)
+    {
         //if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(emailAddress) || string.IsNullOrEmpty(carmodel) || string.IsNullOrEmpty(carmake))
         //{
         //    return View("~/Views/Shared/Error.cshtml");
         //}
         //else
         //{
-        //        using (CarInsuranceEntities db = new CarInsuranceEntities())
-        //        {
-        //            CarInsuranceTable carInsurance = new CarInsuranceTable();
-        //            var signup = new SignUp();
-        //            signup.FirstName = firstName;
-        //            signup.LastName = lastName;
-        //            signup.EmailAddress = emailAddress;
-        //            signup.Date_of_birth = dateofbirth;
-        //            signup.CarYear = carYear;
-        //            signup.CarModel = carmodel;
-        //            signup.CarMake = carmake;
-        //            db.CarInsuranceTables.Add(carInsurance);
-        //            db.SaveChanges();
-        //        }
+            using (CarInsuranceEntities db = new CarInsuranceEntities())
+            {
+                CarInsuranceTable signup = new CarInsuranceTable();
 
-        //        return View("Success");
-        //   // }
+                signup.FirstName = firstName;
+                signup.LastName = lastName;
+                signup.EmailAddress = emailAddress;
+                signup.Date_of_birth = dateofbirth;
+                signup.CarYear = carYear;
+                signup.CarModel = carmodel;
+                signup.CarMake = carmake;
+                    signup.DUI = DUI;
+                    signup.Tickets = tickets;
+                    signup.FullCoverage = fullCoverage;
+                db.CarInsuranceTables.Add(signup);
+                db.SaveChanges();
+            }
+
+            return View("Success");
         //}
-        public ActionResult About()
-        {
+    }
+    public ActionResult About()
+            {
             ViewBag.Message = "Your application description page.";
 
             return View();

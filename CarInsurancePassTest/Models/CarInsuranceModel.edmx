@@ -13,13 +13,13 @@
           <Property Name="FirstName" Type="varchar" MaxLength="50" />
           <Property Name="LastName" Type="varchar" MaxLength="50" />
           <Property Name="EmailAddress" Type="varchar" MaxLength="100" />
-          <Property Name="Date_of_birth" Type="date" />
-          <Property Name="CarYear" Type="date" />
+          <Property Name="Date_of_birth" Type="datetime" />
+          <Property Name="CarYear" Type="datetime" />
           <Property Name="CarMake" Type="varchar" MaxLength="200" />
           <Property Name="CarModel" Type="varchar" MaxLength="60" />
-          <Property Name="DUI" Type="text" />
-          <Property Name="Tickets" Type="varchar" MaxLength="10" />
-          <Property Name="FullCoverage" Type="text" />
+          <Property Name="DUI" Type="varchar" MaxLength="20" />
+          <Property Name="Tickets" Type="varchar" MaxLength="20" />
+          <Property Name="FullCoverage" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityContainer Name="CarInsuranceModelStoreContainer">
           <EntitySet Name="CarInsuranceTable" EntityType="Self.CarInsuranceTable" Schema="dbo" store:Type="Tables" />
@@ -36,13 +36,13 @@
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Date_of_birth" Type="DateTime" Precision="0" />
-          <Property Name="CarYear" Type="DateTime" Precision="0" />
+          <Property Name="Date_of_birth" Type="DateTime" Precision="3" />
+          <Property Name="CarYear" Type="DateTime" Precision="3" />
           <Property Name="CarMake" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="CarModel" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="DUI" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Tickets" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="FullCoverage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DUI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Tickets" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FullCoverage" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="CarInsuranceEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CarInsuranceTables" EntityType="Self.CarInsuranceTable" />
