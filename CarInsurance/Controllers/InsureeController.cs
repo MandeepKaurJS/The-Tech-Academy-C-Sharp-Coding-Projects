@@ -52,6 +52,7 @@ namespace CarInsurance.Controllers
             {
                 db.Insurees.Add(insuree);
                 db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
 
