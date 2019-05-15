@@ -75,19 +75,19 @@ HAVING ppc.Name = 'Clothing'</CommandText>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.325in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.38333in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.23333in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.40833in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.25833in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -283,6 +283,7 @@ HAVING ppc.Name = 'Clothing'</CommandText>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -389,6 +390,7 @@ HAVING ppc.Name = 'Clothing'</CommandText>
                                   <Value>=Fields!LineTotal.Value</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -405,6 +407,7 @@ HAVING ppc.Name = 'Clothing'</CommandText>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -436,7 +439,7 @@ HAVING ppc.Name = 'Clothing'</CommandText>
             <Top>0.76333in</Top>
             <Left>1.51333in</Left>
             <Height>0.5in</Height>
-            <Width>5in</Width>
+            <Width>6.60833in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -447,7 +450,7 @@ HAVING ppc.Name = 'Clothing'</CommandText>
         <Height>2in</Height>
         <Style />
       </Body>
-      <Width>6.51333in</Width>
+      <Width>8.12167in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
