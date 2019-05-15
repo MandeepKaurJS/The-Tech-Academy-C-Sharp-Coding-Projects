@@ -53,12 +53,7 @@ namespace CarInsurance.Controllers
             {
                 db.Insurees.Add(insuree);
                 db.SaveChanges();
-                QuoteController quote = new QuoteController();
-                quote.DateOfBirth = Convert.ToInt32(insuree.DateOfBirth);
-                if (quote.DateOfBirth > 25)
-                {
-                    insuree.Quote = 50 + 25;
-                }
+              
                 return RedirectToAction("Index");
             }
 

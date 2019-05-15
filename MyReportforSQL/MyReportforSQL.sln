@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "MyReportforSQL", "MyReportforSQL.rptproj", "{AC63F427-A40E-4332-87A2-7AA42AE9153A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC63F427-A40E-4332-87A2-7AA42AE9153A}.Debug|Default.ActiveCfg = Debug
+		{AC63F427-A40E-4332-87A2-7AA42AE9153A}.Debug|Default.Build.0 = Debug
+		{AC63F427-A40E-4332-87A2-7AA42AE9153A}.Debug|Default.Deploy.0 = Debug
+		{AC63F427-A40E-4332-87A2-7AA42AE9153A}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{AC63F427-A40E-4332-87A2-7AA42AE9153A}.DebugLocal|Default.Build.0 = DebugLocal
+		{AC63F427-A40E-4332-87A2-7AA42AE9153A}.Release|Default.ActiveCfg = Release
+		{AC63F427-A40E-4332-87A2-7AA42AE9153A}.Release|Default.Build.0 = Release
+		{AC63F427-A40E-4332-87A2-7AA42AE9153A}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A88445DD-63BA-4A04-9CEA-F561348B87FE}
+	EndGlobalSection
+EndGlobal
