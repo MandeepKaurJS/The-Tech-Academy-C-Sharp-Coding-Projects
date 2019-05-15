@@ -42,7 +42,7 @@ namespace exportDataFrom_Excel.Controllers
                 SqlBulkCopy sqlBulk = new SqlBulkCopy(ConfigurationManager.ConnectionStrings["CS"].ConnectionString);
 
                 //Give your Destination table name
-                sqlBulk.DestinationTableName = "Student";
+                sqlBulk.DestinationTableName = "Students";
 
                 //Mappings
                 sqlBulk.ColumnMappings.Add("FirstName", "FirstName");
