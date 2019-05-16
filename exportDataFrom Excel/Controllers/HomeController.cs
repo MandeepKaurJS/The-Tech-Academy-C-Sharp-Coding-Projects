@@ -55,7 +55,7 @@ namespace exportDataFrom_Excel.Controllers
 
                 ViewBag.Result = "Successfully Imported";
             }
-            return View();
+            return View(importExcel);
         }
 
         public ActionResult About()
