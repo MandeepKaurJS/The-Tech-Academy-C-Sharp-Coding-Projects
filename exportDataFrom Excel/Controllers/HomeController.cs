@@ -17,25 +17,26 @@ namespace exportDataFrom_Excel.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(ImportExcel importExcel)
+        public ActionResult ImportExcel()
         {
+            ImportExcel importExcel = new ImportExcel();
             if (ModelState.IsValid)
             {
-                string path = Server.MapPath("~/Content/Upload/" + importExcel.file.FileName);
+                string path = Server.MapPath("~/Documents/" + importExcel.file.FileName);
                 importExcel.file.SaveAs(path);
 
                 string excelConnectionString = @"Provider='Microsoft.ACE.OLEDB.12.0';Data Source='" + path + "';Extended Properties='Excel 12.0 Xml;IMEX=1'";
-                OleDbConnection excelConnection = new OleDbConnection(excelConnectionString);
+                OleDbConnection Students = new OleDbConnection(excelConnectionString);
 
                 //Sheet Name
-                excelConnection.Open();
-                string tableName = excelConnection.GetSchema("Tables").Rows[0]["TABLE_NAME"].ToString();
-                excelConnection.Close();
+                Students.Open();
+                string tableName = Students.GetSchema("Tables").Rows[0]["TABLE_NAME"].ToString();
+                Students.Close();
                 //End
 
-                OleDbCommand cmd = new OleDbCommand("Select * from [" + tableName + "]", excelConnection);
+                OleDbCommand cmd = new OleDbCommand("Select * from [" + tableName + "]", Students );
 
-                excelConnection.Open();
+                Students.Open();
 
                 OleDbDataReader dReader;
                 dReader = cmd.ExecuteReader();
@@ -50,7 +51,7 @@ namespace exportDataFrom_Excel.Controllers
                 
 
                 sqlBulk.WriteToServer(dReader);
-                excelConnection.Close();
+                Students.Close();
 
                 ViewBag.Result = "Successfully Imported";
             }

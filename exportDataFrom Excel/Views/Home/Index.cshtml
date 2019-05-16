@@ -1,6 +1,6 @@
 ﻿<h4>@ViewBag.Result</h4>
 @model exportDataFrom_Excel.Models.ImportExcel
-@using (Html.BeginForm("Index", "ImportExcel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("ImportExcel", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.TextBoxFor(m => m.file, new { type = "file" })
     <button id="submitButton" type="submit">Submit</button>
