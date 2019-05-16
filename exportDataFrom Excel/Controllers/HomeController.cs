@@ -26,17 +26,17 @@ namespace exportDataFrom_Excel.Controllers
                 importExcel.file.SaveAs(path);
 
                 string excelConnectionString = @"Provider='Microsoft.ACE.OLEDB.12.0';Data Source='" + path + "';Extended Properties='Excel 12.0 Xml;IMEX=1'";
-                OleDbConnection Students = new OleDbConnection(excelConnectionString);
+                OleDbConnection excelconnection = new OleDbConnection(excelConnectionString);
 
                 //Sheet Name
-                Students.Open();
-                string tableName = Students.GetSchema("Tables").Rows[0]["TABLE_NAME"].ToString();
-                Students.Close();
+                excelconnection.Open();
+                string tableName =excelconnection.GetSchema("Tables").Rows[0]["TABLE_NAME"].ToString();
+                excelconnection.Close();
                 //End
 
-                OleDbCommand cmd = new OleDbCommand("Select * from [" + tableName + "]", Students );
+                OleDbCommand cmd = new OleDbCommand("Select * from [" + tableName + "]", excelconnection );
 
-                Students.Open();
+                excelconnection.Open();
 
                 OleDbDataReader dReader;
                 dReader = cmd.ExecuteReader();
@@ -51,7 +51,7 @@ namespace exportDataFrom_Excel.Controllers
                 
 
                 sqlBulk.WriteToServer(dReader);
-                Students.Close();
+                excelconnection.Close();
 
                 ViewBag.Result = "Successfully Imported";
             }
