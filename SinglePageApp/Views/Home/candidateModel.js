@@ -1,4 +1,5 @@
-﻿var candidateModel = {
+﻿<script>
+var candidateModel = {
     FirstName: ko.observable(''),
     LastName: ko.observable(''),
     Email: ko.observable(''),
@@ -6,7 +7,7 @@
     Technologies: ko.observableArray([]),
     TechnologyToAdd: ko.observable('')
 };
-
+</script>
 
 candidateModel.Name = ko.dependentObservable(function () {
     return candidateModel.FirstName() +

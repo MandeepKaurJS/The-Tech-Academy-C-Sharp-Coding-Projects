@@ -23,7 +23,7 @@ namespace exportDataFrom_Excel.Controllers
             ImportExcel importExcel = new ImportExcel();
             if (ModelState.IsValid)
             {
-                string path = Server.MapPath("./Documents/" + importExcel.file.FileName);
+                string path = Server.MapPath("~/uploads/" + importExcel.file.FileName);
                 importExcel.file.SaveAs(path);
 
                 string excelConnectionString = @"Provider='Microsoft.ACE.OLEDB.12.0';Data Source='" + path + "';Extended Properties='Excel 12.0 Xml;IMEX=1'";
