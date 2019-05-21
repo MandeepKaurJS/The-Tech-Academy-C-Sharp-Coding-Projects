@@ -1,0 +1,53 @@
+﻿@using System.Web.Script.Serialization;
+@model SinglePageApp.Models.Student
+@{
+    ViewBag.Title = "StudentMvcWithKnockout";
+
+}
+<h2>StudentMvcWithKnockout</h2>
+<script src="@Url.Content("~/Scripts/knockout-3.4.2.js")" type="text/javascript"></script>
+
+
+<p>Name:<strong data-bind="text: Name"></strong></p>
+<p>SurName:<strong data-bind="text: Surname"></strong></p>
+<script type="text/javascript">
+        $(function()
+        {
+        var model =@Html.Raw(Json.Encode(Model));
+        ko.applyBindings(model);
+        });
+</script>
+<form>
+<div>
+<table>
+<tbody data-bind ="foreach: Students">
+
+    <tr style ="border-bottom: 1px solid #000000;">
+        <td>
+            <span data-bind ="text: Number"></span>
+        </td>
+        <td>
+            <span data-bind ="text: Name"></span>
+        </td>
+        <td>
+            <span data-bind ="text: Surname"></span>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+        </form>
+
+        <script type ="text/javascript">
+            var AppViewModel =function () {
+            var self =this;
+            self.Students = ko.mapping.fromJS([]);
+            $.getJSON('/Home/GetStudents/',function (data) {
+            ko.mapping.fromJS(data, {}, self.Students);
+            });
+            }
+            $(document).ready(function () {
+            var viewModel =new AppViewModel();
+            ko.applyBindings(viewModel);
+            });
+       </script>
