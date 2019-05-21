@@ -1,0 +1,22 @@
+﻿@model ExportExcelFileInASP.NET.Models.Product
+@{
+    ViewBag.Title = "Success";
+}
+
+<h2>Success</h2>
+<h3>List Product</h3>
+<table cellpadding="2" cellspacing="2" border="1">
+    <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>LastName</th>
+    </tr>
+    @foreach(var p in ViewBag.ListProducts)
+    {
+        <tr>
+            <td>@p.id</td>
+            <td>@p.FirstName</td>
+            <td>@p.LastName</td>
+        </tr>
+    }
+</table>
